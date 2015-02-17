@@ -2,7 +2,7 @@
 
 `up.js` allows to asynchronously load resources(css, js, images, etc.) on demand.
 
-* Copyright 2015 @apyrkh
+* Copyright (c) 2015 Alexander Pyrkh
 * License: MIT
 
 ## How to use
