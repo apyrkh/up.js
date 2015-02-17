@@ -36,7 +36,7 @@
     var link = document.createElement('link');
     link.rel = rel;
     link.href = href;
-    document.body.appendChild(link);
+    document.head.appendChild(link);
   }
 
   // append a JS resource to the document
@@ -44,7 +44,7 @@
     var script = document.createElement('script');
     script.src = src;
     script.async = false;
-    document.body.appendChild(script);
+    document.head.appendChild(script);
 
     return up;
   };
