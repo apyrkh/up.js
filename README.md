@@ -5,11 +5,25 @@
 * Copyright (c) 2015 Aliaksandr Pyrkh
 * License: MIT
 
+## Installation
+
+Download `up.js` manually or install via `bower`:
+
+<pre>
+bower install https://github.com/apyrkh/up.js.git#1.0
+</pre>
+
 ## How to use
 
 Include the script into your page as inline script or load it as a resource:
 <pre lang="html">
-&lt;script src="path/to/up.js"&gt;&lt;/script&gt;
+&lt;script src="/path/to/up.min.js"&gt;&lt;/script&gt;
+</pre>
+
+or
+
+<pre lang="html">
+&lt;script src="/bower_components/up.js/up.min.js"&gt;&lt;/script&gt;
 </pre>
 
 Once you have included up.js you will be able to use `window.up` variable (or just `up`) that contains functions `up.js` and `up.link`.
