@@ -1,13 +1,13 @@
 /**
  * up.js, loading resources on demand
  *
- * Version: 0.1
- * Author: Alexander Pyrkh
+ * Version: 1.0
+ * Author: Aliaksandr Pyrkh
  * Contact: alexpyrkh@gmail.com
  *
  * The MIT License (MIT)
  *
- * Copyright (c) 2015 Alexander Pyrkh
+ * Copyright (c) 2015 Aliaksandr Pyrkh
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -32,14 +32,7 @@
 
   var up = {};
 
-  function renderLink(rel, href) {
-    var link = document.createElement('link');
-    link.rel = rel;
-    link.href = href;
-    document.head.appendChild(link);
-  }
-
-  // append a JS resource to the document
+  // append a JS element to the document
   up.js = function (src) {
     var script = document.createElement('script');
     script.src = src;
@@ -49,16 +42,12 @@
     return up;
   };
 
-  // append a CSS resource to the document
-  up.css = function (href) {
-    renderLink('stylesheet', href);
-
-    return up;
-  };
-
-  // prefetch a resource
-  up.pre = function (href) {
-    renderLink('prefetch', href);
+  // append a link element to the document
+  up.link = function (rel, href) {
+    var link = document.createElement('link');
+    link.rel = rel;
+    link.href = href;
+    document.head.appendChild(link);
 
     return up;
   };

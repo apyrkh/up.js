@@ -2,7 +2,7 @@
 
 `up.js` allows to asynchronously load resources(css, js, images, etc.) on demand.
 
-* Copyright (c) 2015 Alexander Pyrkh
+* Copyright (c) 2015 Aliaksandr Pyrkh
 * License: MIT
 
 ## How to use
@@ -12,23 +12,9 @@ Include the script into your page as inline script or load it as a resource:
 &lt;script src="path/to/up.js"&gt;&lt;/script&gt;
 </pre>
 
-Once you have included up.js you will be able to use `window.up` variable (or just `up`) that contains functions `up.css`, `up.js` and `up.pre`.
+Once you have included up.js you will be able to use `window.up` variable (or just `up`) that contains functions `up.js` and `up.link`.
 
-### Loading css files
-
-Load styles asynchronously, but apply them in right order.
-
-<pre lang="html">
-&lt;script src="path/to/up.js"&gt;&lt;/script&gt;
-&lt;script&gt;
-up
-  .css('path/to/your/styles1.css')
-  .css('path/to/your/styles2.css')
-  ...
-&lt;/script&gt;
-</pre>
-
-### Loading js files
+### Loading script elements
 
 Load scripts asynchronously, but apply them in right order.
 
@@ -42,7 +28,23 @@ up
 &lt;/script&gt;
 </pre>
 
-### Prefetch resources
+### Loading link elements
+
+#### Loading css files
+
+Load styles asynchronously, but apply them in right order.
+
+<pre lang="html">
+&lt;script src="path/to/up.js"&gt;&lt;/script&gt;
+&lt;script&gt;
+up
+  .link('stylesheet', 'path/to/your/styles1.css')
+  .link('stylesheet', 'path/to/your/styles2.css')
+  ...
+&lt;/script&gt;
+</pre>
+
+#### Prefetch resources
 
 Load resources asynchronously. 
 It can be used to prefetch necessary resources beforehand.
@@ -51,9 +53,25 @@ It can be used to prefetch necessary resources beforehand.
 &lt;script src="path/to/up.js"&gt;&lt;/script&gt;
 &lt;script&gt;
 up
-  .pre('path/to/your/resource.css')
-  .pre('path/to/your/resource.js')
-  .pre('path/to/your/resource.png')
+  .link('prefetch', 'path/to/your/resource.css')
+  .link('prefetch', 'path/to/your/resource.js')
+  .link('prefetch', 'path/to/your/resource.png')
+  ...
+&lt;/script&gt;
+</pre>
+
+#### Import resources
+
+Load html files asynchronously.
+It can be used to include and reuse HTML documents in other HTML documents.
+
+<pre lang="html">
+&lt;script src="path/to/up.js"&gt;&lt;/script&gt;
+&lt;script&gt;
+up
+  .link('import', 'path/to/your/file1.html')
+  .link('import', 'path/to/your/file2.html')
+  .link('import', 'path/to/your/file3.html')
   ...
 &lt;/script&gt;
 </pre>
