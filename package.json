@@ -1,0 +1,24 @@
+{
+  "name": "up.js",
+  "version": "2.0.0",
+  "description": "A lightweight solution for asynchronous loading/prefetching resources(css, js, images, etc.) on demand",
+  "main": "up.js",
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/apyrkh/up.js.git"
+  },
+  "keywords": [
+    "performance",
+    "optimization",
+    "asynchronous",
+    "resource",
+    "loading"
+  ],
+  "author": "Aliaksandr Pyrkh <alexpyrkh@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/apyrkh/up.js/issues"
+  },
+  "homepage": "https://github.com/apyrkh/up.js#readme"
+}

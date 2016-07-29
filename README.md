@@ -7,33 +7,23 @@
 
 ## Installation
 
-Download `up.js` manually or install via `bower`:
+Download `up.js` manually or install via `npm`:
 
 <pre>
-bower install https://github.com/apyrkh/up.js.git#1.0
+npm install -S git://github.com/apyrkh/up.js.git
 </pre>
 
 ## How to use
 
-Include the script into your page as inline script or load it as a resource:
-<pre lang="html">
-&lt;script src="/path/to/up.min.js"&gt;&lt;/script&gt;
+<pre lang="js">
+var up = require('up.js')
 </pre>
-
-or
-
-<pre lang="html">
-&lt;script src="/bower_components/up.js/up.min.js"&gt;&lt;/script&gt;
-</pre>
-
-Once you have included up.js you will be able to use `window.up` variable (or just `up`) that contains functions `up.js` and `up.link`.
 
 ### Loading script elements
 
 Load scripts asynchronously, but apply them in right order.
 
 <pre lang="html">
-&lt;script src="path/to/up.js"&gt;&lt;/script&gt;
 &lt;script&gt;
 up
   .js('path/to/your/script1.js')
@@ -49,7 +39,6 @@ up
 Load styles asynchronously, but apply them in right order.
 
 <pre lang="html">
-&lt;script src="path/to/up.js"&gt;&lt;/script&gt;
 &lt;script&gt;
 up
   .link('stylesheet', 'path/to/your/styles1.css')
@@ -64,7 +53,6 @@ Load resources asynchronously.
 It can be used to prefetch necessary resources beforehand.
 
 <pre lang="html">
-&lt;script src="path/to/up.js"&gt;&lt;/script&gt;
 &lt;script&gt;
 up
   .link('prefetch', 'path/to/your/resource.css')
@@ -80,12 +68,10 @@ Load html files asynchronously.
 It can be used to include and reuse HTML documents in other HTML documents.
 
 <pre lang="html">
-&lt;script src="path/to/up.js"&gt;&lt;/script&gt;
 &lt;script&gt;
 up
   .link('import', 'path/to/your/file1.html')
   .link('import', 'path/to/your/file2.html')
-  .link('import', 'path/to/your/file3.html')
   ...
 &lt;/script&gt;
 </pre>

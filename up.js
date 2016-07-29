@@ -27,30 +27,24 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-(function (window, document) {
-  'use strict';
-
-  var up = {};
-
+module.exports = {
   // append a JS element to the document
-  up.js = function (src) {
+  js: function (src) {
     var script = document.createElement('script');
     script.src = src;
     script.async = false;
     document.head.appendChild(script);
 
     return up;
-  };
+  },
 
   // append a link element to the document
-  up.link = function (rel, href) {
+  link: function (rel, href) {
     var link = document.createElement('link');
     link.rel = rel;
     link.href = href;
     document.head.appendChild(link);
 
     return up;
-  };
-
-  window.up = up;
-})(window, document);
+  }
+};
