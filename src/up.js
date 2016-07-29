@@ -27,6 +27,8 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
+'use strict';
+
 module.exports = {
   // append a JS element to the document
   js: function (src) {
