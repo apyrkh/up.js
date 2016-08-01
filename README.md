@@ -15,7 +15,7 @@ npm install -S git://github.com/apyrkh/up.js.git
 
 ## How to use
 
-<pre lang="js">
+<pre lang="javascript">
 var up = require('up.js')
 </pre>
 
@@ -23,13 +23,11 @@ var up = require('up.js')
 
 Load scripts asynchronously, but apply them in right order.
 
-<pre lang="html">
-&lt;script&gt;
+<pre lang="javascript">
 up
   .js('path/to/your/script1.js')
   .js('path/to/your/script2.js')
   ...
-&lt;/script&gt;
 </pre>
 
 ### Loading link elements
@@ -38,13 +36,11 @@ up
 
 Load styles asynchronously, but apply them in right order.
 
-<pre lang="html">
-&lt;script&gt;
+<pre lang="javascript">
 up
   .link('stylesheet', 'path/to/your/styles1.css')
   .link('stylesheet', 'path/to/your/styles2.css')
   ...
-&lt;/script&gt;
 </pre>
 
 #### Prefetch resources
@@ -52,14 +48,12 @@ up
 Load resources asynchronously. 
 It can be used to prefetch necessary resources beforehand.
 
-<pre lang="html">
-&lt;script&gt;
+<pre lang="javascript">
 up
   .link('prefetch', 'path/to/your/resource.css')
   .link('prefetch', 'path/to/your/resource.js')
   .link('prefetch', 'path/to/your/resource.png')
   ...
-&lt;/script&gt;
 </pre>
 
 #### Import resources
@@ -67,11 +61,9 @@ up
 Load html files asynchronously.
 It can be used to include and reuse HTML documents in other HTML documents.
 
-<pre lang="html">
-&lt;script&gt;
+<pre lang="javascript">
 up
   .link('import', 'path/to/your/file1.html')
   .link('import', 'path/to/your/file2.html')
   ...
-&lt;/script&gt;
 </pre>
