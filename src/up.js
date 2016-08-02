@@ -37,7 +37,7 @@ module.exports = {
     script.async = false;
     document.head.appendChild(script);
 
-    return up;
+    return this;
   },
 
   // append a link element to the document
@@ -47,6 +47,6 @@ module.exports = {
     link.href = href;
     document.head.appendChild(link);
 
-    return up;
+    return this;
   }
 };
