@@ -1,6 +1,6 @@
 {
   "name": "up.js",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "A lightweight solution for asynchronous loading/prefetching resources(css, js, images, etc.) on demand",
   "main": "lib/up.js",
   "scripts": {
