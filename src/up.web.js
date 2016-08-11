@@ -1,5 +1,5 @@
 /**
- * up.js, loading resources on demand
+ * up.js - async loading resources on demand
  *
  * Version: 1.0
  * Author: Aliaksandr Pyrkh
@@ -27,27 +27,28 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-'use strict';
+(function(window) {
+  'use strict';
+  var document = window.document;
+  var createElement = 'createElement';
+  var appendChild = 'appendChild';
+  window['up'] = {
+    // append a JS element to the document
+    js: function(src) {
+      var script = document[createElement]('script');
+      script.src = src;
+      script.async = false;
+      document.head[appendChild](script);
+      return this
+    },
 
-var document = window.document;
-var createElement = 'createElement';
-var appendChild = 'appendChild';
-module.exports = {
-  // append a JS element to the document
-  js: function(src) {
-    var script = document[createElement]('script');
-    script.src = src;
-    script.async = false;
-    document.head[appendChild](script);
-    return this
-  },
-
-  // append a link element to the document
-  link: function(rel, href) {
-    var link = document[createElement]('link');
-    link.rel = rel;
-    link.href = href;
-    document.head[appendChild](link);
-    return this
-  }
-};
+    // append a link element to the document
+    link: function(rel, href) {
+      var link = document[createElement]('link');
+      link.rel = rel;
+      link.href = href;
+      document.head[appendChild](link);
+      return this
+    }
+  };
+})(function() {return this}());

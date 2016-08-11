@@ -2,8 +2,12 @@
   "name": "up.js",
   "version": "0.0.0",
   "description": "A lightweight solution for asynchronous loading/prefetching resources(css, js, images, etc.) on demand",
-  "main": "index.js",
-  "scripts": {},
+  "main": "lib/up.js",
+  "scripts": {
+    "compile": "uglifyjs src/up.js -o lib/up.js --beautify",
+    "compile-web": "uglifyjs src/up.web.js -o lib/up.web.js --no-dead-code --mangle --compress",
+    "prepublish": "npm run compile && npm run compile-web"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/apyrkh/up.js.git"
@@ -20,5 +24,9 @@
   "bugs": {
     "url": "https://github.com/apyrkh/up.js/issues"
   },
-  "homepage": "https://github.com/apyrkh/up.js#readme"
+  "homepage": "https://github.com/apyrkh/up.js#readme",
+  "dependencies": {},
+  "devDependencies": {
+    "uglify-js": "2.7.0"
+  }
 }
