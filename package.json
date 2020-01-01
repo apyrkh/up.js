@@ -7,7 +7,7 @@
     "prebuild": "rimraf build && mkdirp build",
     "build-cjs": "uglifyjs src/up.js -o build/up.js --beautify",
     "build-web": "uglifyjs src/up.web.js -o build/up.web.js --no-dead-code --mangle --compress",
-    "build": "npm run build-module && npm run build-web",
+    "build": "npm run build-cjs && npm run build-web",
     "prepublishOnly": "npm run build"
   },
   "repository": {
