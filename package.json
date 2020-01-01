@@ -5,20 +5,21 @@
   "main": "build/up.js",
   "scripts": {
     "prebuild": "rimraf build && mkdirp build",
-    "build": "uglifyjs src/up.js -o build/up.js --beautify",
+    "build-cjs": "uglifyjs src/up.js -o build/up.js --beautify",
     "build-web": "uglifyjs src/up.web.js -o build/up.web.js --no-dead-code --mangle --compress",
-    "prepublishOnly": "npm run build && npm run build-web"
+    "build": "npm run build-module && npm run build-web",
+    "prepublishOnly": "npm run build"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/apyrkh/up.js.git"
   },
   "keywords": [
-    "performance",
-    "optimization",
     "asynchronous",
     "resource",
-    "loading"
+    "loading",
+    "performance",
+    "optimization"
   ],
   "author": "Aliaksandr Pyrkh <alexpyrkh@gmail.com>",
   "license": "MIT",

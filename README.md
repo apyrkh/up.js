@@ -9,61 +9,65 @@
 
 Download `up.js` manually or install via `npm`:
 
-<pre>
-npm install -S git://github.com/apyrkh/up.js.git
-</pre>
+```
+npm install -S up.js
+```
 
 ## How to use
 
-<pre lang="javascript">
-var up = require('up.js')
-</pre>
+```
+up.js(url, onLoad)
+up.link(rel, href)
+```
 
 ### Loading script elements
 
-Load scripts asynchronously, but apply them in right order.
+Load scripts, but apply them in right order.
 
-<pre lang="javascript">
+```javascript
 up
-  .js('path/to/your/script1.js')
-  .js('path/to/your/script2.js')
-  ...
-</pre>
+  .js('path/to/your/script1.js', function() { console.log('script1 loaded') })
+  .js('path/to/your/script2.js', function() { console.log('script2 loaded') })
+  .js('path/to/your/script3.js', function() { console.log('script3 loaded') })
+  // ...
+```
 
 ### Loading link elements
 
 #### Loading css files
 
-Load styles asynchronously, but apply them in right order.
+Load styles, but apply them in right order.
 
-<pre lang="javascript">
+```javascript
 up
   .link('stylesheet', 'path/to/your/styles1.css')
   .link('stylesheet', 'path/to/your/styles2.css')
-  ...
-</pre>
+  .link('stylesheet', 'path/to/your/styles3.css')
+  // ...
+```
 
 #### Prefetch resources
 
-Load resources asynchronously. 
+Load resources. 
 It can be used to prefetch necessary resources beforehand.
 
-<pre lang="javascript">
+```javascript
 up
   .link('prefetch', 'path/to/your/resource.css')
   .link('prefetch', 'path/to/your/resource.js')
-  .link('prefetch', 'path/to/your/resource.png')
-  ...
-</pre>
+  .link('prefetch', 'path/to/your/resource.png')  
+  // ...
+```
 
 #### Import resources
 
-Load html files asynchronously.
+Load html files.
 It can be used to include and reuse HTML documents in other HTML documents.
 
-<pre lang="javascript">
+```javascript
 up
   .link('import', 'path/to/your/file1.html')
   .link('import', 'path/to/your/file2.html')
-  ...
-</pre>
+  .link('import', 'path/to/your/file3.html')
+  // ...
+```

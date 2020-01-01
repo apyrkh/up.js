@@ -4,11 +4,11 @@ const appendChild = 'appendChild';
 
 module.exports = {
   // append a JS element to the document
-  js: function(src, onLoad, async) {
+  js: function(src, onLoad) {
     const script = document[createElement]('script');
     script.src = src;
     script.onload = onLoad;
-    script.async = async || false;
+    script.async = 0;
     document.head[appendChild](script);
     return this;
   },
