@@ -1,5 +1,9 @@
 # ignored
-.idea/
-lib/
+.idea
+build
 node_modules
-npm-debug.log
+*.log
+*.iml
+*.ipr
+*.iws
+*.orig
