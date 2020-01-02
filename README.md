@@ -2,9 +2,6 @@
 
 `up.js` allows to load/prefetch resources(css, js, images, etc.) in right order.
 
-* Copyright (c) 2015 Aliaksandr Pyrkh
-* License: MIT
-
 ## Installation
 
 Download `up.js` manually or install via `npm`:
@@ -15,9 +12,11 @@ npm install -S up.js
 
 ## How to use
 
+Chain resources as you want
+
 ```
-up.js(url, onLoad)
-up.link(rel, href)
+up.js(url, onLoad).js(url, onLoad)
+up.link(rel, href).link(rel, href)
 ```
 
 ### Loading script elements
@@ -71,3 +70,6 @@ up
   .link('import', 'path/to/your/file3.html')
   // ...
 ```
+
+* Copyright (c) 2015 Aliaksandr Pyrkh
+* License: MIT
