@@ -1,6 +1,6 @@
 # up.js
 
-`up.js` allows to load resources(css, js, images, etc.) on demand.
+`up.js` allows to load/prefetch resources(css, js, images, etc.) in right order.
 
 * Copyright (c) 2015 Aliaksandr Pyrkh
 * License: MIT
