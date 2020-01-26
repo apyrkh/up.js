@@ -4,8 +4,12 @@
   "description": "A lightweight solution for asynchronous load of resources(css, js, images, etc.) on demand",
   "main": "index.js",
   "scripts": {
-    "build": "google-closure-compiler --js=up.js --js_output_file=up.min.js",
-    "prepublishOnly": "npm run build"
+    "build": "google-closure-compiler --js=up.js --js_output_file=up.min.js"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run build"
+    }
   },
   "repository": {
     "type": "git",
@@ -26,6 +30,7 @@
   "homepage": "https://github.com/apyrkh/up.js#readme",
   "dependencies": {},
   "devDependencies": {
-    "google-closure-compiler": "20200112.0.0"
+    "google-closure-compiler": "20200112.0.0",
+    "husky": "4.2.1"
   }
 }
