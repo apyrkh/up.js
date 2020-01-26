@@ -1,75 +1,51 @@
 # up.js
 
-`up.js` allows to load/prefetch resources(css, js, images, etc.) in right order.
+`up.js` allows to load, prefetch and import css, js, images and etc. on demand in right order.
 
-## Installation
+## How to use
 
-Download `up.js` manually or install via `npm`:
+Download `up.js` manually or install via `npm`
 
 ```
 npm install -S up.js
 ```
 
-## How to use
-
-Chain resources as you want
-
-```
-up.js(url, onLoad).js(url, onLoad)
-up.link(rel, href).link(rel, href)
-```
-
-### Loading script elements
-
-Load scripts, but apply them in right order.
+Load scripts and apply them in right order
 
 ```javascript
 up
   .js('path/to/your/script1.js', function() { console.log('script1 loaded') })
-  .js('path/to/your/script2.js', function() { console.log('script2 loaded') })
+  .js('path/to/your/script2.js')
   .js('path/to/your/script3.js', function() { console.log('script3 loaded') })
-  // ...
 ```
 
-### Loading link elements
-
-#### Loading css files
-
-Load styles, but apply them in right order.
+Load styles
 
 ```javascript
 up
-  .link('stylesheet', 'path/to/your/styles1.css')
-  .link('stylesheet', 'path/to/your/styles2.css')
-  .link('stylesheet', 'path/to/your/styles3.css')
-  // ...
+  .link('path/to/your/styles1.css', 'stylesheet')
+  .link('path/to/your/styles2.css', 'stylesheet')
+  .link('path/to/your/styles3.css', 'stylesheet')
 ```
 
-#### Prefetch resources
-
-Load resources. 
-It can be used to prefetch necessary resources beforehand.
+Prefetch resources
 
 ```javascript
 up
-  .link('prefetch', 'path/to/your/resource.css')
-  .link('prefetch', 'path/to/your/resource.js')
-  .link('prefetch', 'path/to/your/resource.png')  
-  // ...
+  .link('path/to/your/resource.css', 'prefetch')
+  .link('path/to/your/resource.js', 'prefetch')
+  .link('path/to/your/resource.png', 'prefetch')
 ```
 
-#### Import resources
-
-Load html files.
-It can be used to include and reuse HTML documents in other HTML documents.
+Import resources
 
 ```javascript
 up
-  .link('import', 'path/to/your/file1.html')
-  .link('import', 'path/to/your/file2.html')
-  .link('import', 'path/to/your/file3.html')
-  // ...
+  .link('path/to/your/file1.html', 'import')
+  .link('path/to/your/file2.html', 'import')
+  .link('path/to/your/file3.html', 'import')
 ```
+
 
 * Copyright (c) 2015 Aliaksandr Pyrkh
 * License: MIT

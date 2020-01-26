@@ -1,6 +1,5 @@
 # ignored
 .idea
-build
 node_modules
 *.log
 *.iml

@@ -1,24 +1,24 @@
 (function(window) {
   const document = window.document;
   const createElement = 'createElement';
+  const head = 'head';
   const appendChild = 'appendChild';
+
   window['up'] = {
-    // append a JS element to the document
     js: function(src, onLoad) {
       const script = document[createElement]('script');
       script.src = src;
       script.onload = onLoad;
       script.async = 0;
-      document.head[appendChild](script);
+      document[head][appendChild](script);
       return this;
     },
 
-    // append a link element to the document
-    link: function(rel, href) {
+    link: function(href, rel) {
       const link = document[createElement]('link');
-      link.rel = rel;
       link.href = href;
-      document.head[appendChild](link);
+      link.rel = rel;
+      document[head][appendChild](link);
       return this;
     }
   };

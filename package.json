@@ -1,13 +1,10 @@
 {
   "name": "up.js",
   "version": "2.0.0",
-  "description": "A lightweight solution for asynchronous loading/prefetching resources(css, js, images, etc.) on demand",
-  "main": "build/up.js",
+  "description": "A lightweight solution for asynchronous load of resources(css, js, images, etc.) on demand",
+  "main": "index.js",
   "scripts": {
-    "prebuild": "rimraf build && mkdirp build",
-    "build-cjs": "uglifyjs src/up.js -o build/up.js --beautify",
-    "build-web": "uglifyjs src/up.web.js -o build/up.web.js --no-dead-code --mangle --compress",
-    "build": "npm run build-cjs && npm run build-web",
+    "build": "google-closure-compiler --js=up.js --js_output_file=up.min.js",
     "prepublishOnly": "npm run build"
   },
   "repository": {
@@ -29,8 +26,6 @@
   "homepage": "https://github.com/apyrkh/up.js#readme",
   "dependencies": {},
   "devDependencies": {
-    "mkdirp": "0.5.1",
-    "rimraf": "3.0.0",
-    "uglify-js": "2.7.0"
+    "google-closure-compiler": "20200112.0.0"
   }
 }
