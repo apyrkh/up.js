@@ -1,6 +1,6 @@
 {
   "name": "up.js",
-  "version": "2.0.0",
+  "version": "3.0.0",
   "description": "A lightweight solution for asynchronous load of resources(css, js, images, etc.) on demand",
   "main": "index.js",
   "scripts": {
