@@ -30,7 +30,7 @@
   "homepage": "https://github.com/apyrkh/up.js#readme",
   "dependencies": {},
   "devDependencies": {
-    "google-closure-compiler": "20200112.0.0",
-    "husky": "4.2.1"
+    "google-closure-compiler": "20200315.0.0",
+    "husky": "4.2.3"
   }
 }
